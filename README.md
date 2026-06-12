@@ -1,62 +1,136 @@
-# 📊 E-commerce Funnel & Marketing Performance Analysis
+---
+
+
+# 📊 E‑commerce Funnel & Marketing Performance Analysis
 
 ## 📌 Project Overview
 
-This project analyzes customer acquisition, marketing channel performance, and revenue generation for an e-commerce platform using SQL and Python.
-
-The goal is to understand:
-- How users move through the acquisition funnel
-- Which marketing channels generate the highest value customers
-- Where drop-offs occur in the customer journey
-- How revenue is distributed across channels and time
+This project analyzes customer acquisition, marketing channel performance, and revenue generation for an e‑commerce platform (Olist seller funnel).  
+Using **SQL** for data cleaning and **Python** for analysis and visualization, the study identifies which channels deliver the highest‑value customers, how revenue and sales volume evolve over time, and which customer segments drive orders and revenue.
 
 ---
 
-## 🎯 Business Questions
+## 🎯 Business Questions Answered
 
-This analysis answers the following questions:
-
-- Which marketing channels bring the highest quality leads?
-- What is the conversion rate at each stage of the funnel?
-- Where do we lose the most customers in the funnel?
-- Which channels generate the highest revenue per user?
-- How does revenue and conversion change over time?
+- Which marketing channels bring the highest revenue and best conversion rates?
+- How does revenue and sales volume change month over month?
+- How long does it take a lead to become a customer? (sales cycle length)
+- Which customer groups (reseller vs manufacturer) generate more orders and higher payments?
+- Which product categories (business segments) produce the most revenue?
 
 ---
 
 ## 🧱 Dataset Description
 
-The dataset contains e-commerce marketing and sales data including:
-
-- Customer acquisition source (channel / origin)
-- Lead creation and qualification dates
-- Deal status (won/lost)
-- Revenue generated per customer
-- Time-based activity data
+- **8,000 Marketing Qualified Leads (MQLs)** collected from June 2017 to June 2018.
+- Two main tables:
+  - `mql_leads` – acquisition channel, first contact date, landing page.
+  - `mql_deals` – closed deals, won date, monthly revenue, business segment, lead type, business type.
+- Source: Olist (Brazilian e‑commerce platform).
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-- Python (Pandas, NumPy)
-- SQL (data cleaning & aggregation)
-- Matplotlib / Seaborn / Plotly
-- Jupyter Notebook
+- **SQL** (PostgreSQL) – data cleaning, joining, aggregation  
+- **Python** – pandas, matplotlib, seaborn, plotly  
+- **Jupyter Notebook** – interactive analysis
 
 ---
 
-## 🧹 Data Processing
+## 🧹 Data Processing Steps
 
-Main steps:
-
-- Removed duplicates and inconsistent records using SQL
-- Standardized date formats
-- Joined leads and deals datasets
-- Created cleaned analytical tables
-- Filtered invalid or incomplete records
+- Connected to PostgreSQL using SQLAlchemy.
+- Checked for missing values, duplicates, structural errors.
+- Created cleaned tables: `clean_mql_leads` and `clean_mql_deals`.
+- Standardized date formats; filled missing `origin` with `'unknown'`.
+- Merged datasets for funnel analysis.
 
 ---
 
-## 📈 Funnel Analysis
+## 📈 Funnel & Marketing Analysis Performed
 
-We constructed a customer acquisition funnel:
+1. **Channel effectiveness** – revenue per channel, conversion rate, revenue heatmap over time.
+2. **Sales performance over time** – monthly revenue and sales count trends.
+3. **Customer segmentation** – orders and revenue by business type and business segment.
+
+---
+
+## 🔍 Key Findings
+
+### 📢 Marketing Channels
+- **Organic Search** is the most effective channel:  
+  → **51,426 k revenue** | conversion rate **11.8%**  
+- **Paid Search** ranks second:  
+  → **9,169 k revenue** | conversion rate **12.3%**  
+- **Email** and **Social** show much lower conversion (~3–5.6%).
+
+### 📅 Time Trends
+- Revenue **grew sharply in October 2018** (50,874 k), but **sales volume declined over the last 7 months** – a potential warning sign.
+- The sales cycle remains **long** – leads take considerable time to convert (process inefficiency).
+
+### 🏭 Customer Segments
+- **Resellers** generate the highest number of orders (587) but lower revenue per order.  
+- **Manufacturers** generate fewer orders (242) but **much higher total revenue** (50.8 M vs 10.3 M) – higher‑value customers.
+- Top revenue‑generating business segments:  
+  `construction_tools_house_garden`, `phone_mobile`, `home_decor`, `pet`, `health_beauty`.
+
+---
+
+## 📊 Sample Visualizations
+
+- Bar charts – revenue per channel, conversion rates  
+- Line charts – monthly revenue and sales volume  
+- Heatmap – channel‑by‑month revenue  
+- Pie & bar charts – customer segment analysis  
+
+All visualizations created with `matplotlib`, `seaborn`, and `plotly`.
+
+---
+
+## 🚀 How to Run
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/yourusername/ecommerce-funnel-analysis.git
+   cd ecommerce-funnel-analysis
+   ```
+
+2. **Install dependencies**  
+   ```bash
+   pip install pandas sqlalchemy matplotlib seaborn plotly jupyter
+   ```
+
+3. **Set up PostgreSQL database**  
+   - Load the provided data into your local PostgreSQL instance.  
+   - Update the connection string in the notebook:  
+     ```python
+     engine = create_engine("postgresql://username:password@localhost:5432/analytics")
+     ```
+
+4. **Run the notebook**  
+   ```bash
+   jupyter notebook "E-commerce Marketing Performance Analysis.ipynb"
+   ```
+
+---
+
+## 📁 Repository Contents
+
+- `E-commerce Marketing Performance Analysis.ipynb` – complete analysis notebook  
+- `README.md` – project description (this file)  
+
+---
+
+## 📄 License
+
+This project is for educational and portfolio purposes. Feel free to use and adapt with attribution.
+
+---
+
+## 👤 Author
+
+Ashot Movsisyan 
+(https://github.com/ashot0231/) 
+
+---
