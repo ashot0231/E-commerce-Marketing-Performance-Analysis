@@ -1,4 +1,3 @@
-# E-commerce-Marketing-Performance-Analysis
 # 📊 E-commerce Funnel & Marketing Performance Analysis
 
 ## 📌 Project Overview
