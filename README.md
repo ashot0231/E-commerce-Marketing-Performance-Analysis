@@ -1,103 +1,147 @@
----
+📊 E-commerce Marketing Funnel & Revenue Analysis (Olist Dataset)
+📌 Project Overview
 
+This project analyzes the performance of marketing channels, customer acquisition efficiency, and revenue generation for an e-commerce platform using the Olist Marketing Funnel dataset (~8,000 MQLs).
 
-#  E‑commerce Marketing Performance Analysis
+The main goal is to understand how leads move through the funnel, which channels generate the most valuable customers, and what drives revenue growth across time and customer segments.
 
-##  Project Overview
+The analysis combines SQL (PostgreSQL) for data extraction and transformation with Python (Pandas, Matplotlib, Seaborn, Plotly) for exploratory data analysis and visualization.
 
-This project analyzes customer acquisition, marketing channel performance, and revenue generation for an e‑commerce platform (Olist seller funnel).  
-Using **SQL** for data cleaning and **Python** for analysis and visualization, the study identifies which channels deliver the highest‑value customers, how revenue and sales volume evolve over time, and which customer segments drive orders and revenue.
+🎯 Business Objectives
 
----
+The project focuses on answering the following questions:
 
-##  Business Questions Answered
+Which marketing channels are the most effective in terms of revenue and conversions?
+How does channel performance differ in conversion efficiency?
+How does revenue and sales volume evolve over time?
+What is the structure and efficiency of the sales funnel?
+How long does it take for a lead to convert into a customer?
+Which customer types and business segments generate the most value?
+Where are the main inefficiencies in the funnel?
+🗄️ Dataset Description
+~8,000 Marketing Qualified Leads (MQLs)
+Time period: June 2017 – June 2018
+Source: Olist e-commerce platform (Brazil)
+Main Tables
+mql_leads – lead acquisition data (marketing channel, landing page, first contact date)
+mql_deals – closed deals (revenue, business segment, deal date, customer type)
+⚙️ Data Preparation & Cleaning
+Established connection to PostgreSQL database via SQLAlchemy
+Handled missing values (e.g., unknown marketing channels)
+Standardized date formats for time-series analysis
+Checked and removed duplicates
+Validated data structure and consistency
+Created cleaned analytical tables for modeling:
+clean_mql_leads
+clean_mql_deals
+Joined datasets to construct full funnel view (lead → deal)
+📈 Analytical Approach
+1. Marketing Channel Analysis
+Revenue contribution by channel
+Conversion rate comparison (lead → deal)
+Channel efficiency evaluation
+2. Funnel Analysis
+Lead-to-customer conversion behavior
+Funnel performance and bottlenecks
+Time between acquisition and conversion
+3. Revenue & Time Trends
+Monthly revenue evolution
+Sales volume trends over time
+Identification of growth and decline patterns
+4. Customer Segmentation
+Comparison of resellers vs manufacturers
+Revenue per customer type
+Volume vs value trade-off analysis
+5. Business Segment Analysis
+Revenue distribution across industries
+Identification of top-performing and underperforming segments
+🔍 Key Insights
+📣 Marketing Channels
+Organic Search is the dominant acquisition channel
+Generates the highest revenue
+Provides the largest volume of qualified leads
+Paid Search is the second strongest channel
+Strong revenue contribution
+Slightly lower efficiency compared to organic traffic
 
-- Which marketing channels bring the highest revenue and best conversion rates?
-- How does revenue and sales volume change month over month?
-- How long does it take a lead to become a customer? (sales cycle length)
-- Which customer groups (reseller vs manufacturer) generate more orders and higher payments?
-- Which product categories (business segments) produce the most revenue?
+👉 Conclusion: Organic acquisition is the primary driver of business growth.
 
----
+📉 Funnel Performance
+Sales cycle remains consistently long across the observed period
+Conversion process shows inefficiencies between lead and deal stages
+Revenue growth is not fully aligned with sales volume trends
 
-##  Dataset Description
+👉 Conclusion: The funnel has bottlenecks that slow down conversion efficiency.
 
-- **8,000 Marketing Qualified Leads (MQLs)** collected from June 2017 to June 2018.
-- Two main tables:
-  - `mql_leads` – acquisition channel, first contact date, landing page.
-  - `mql_deals` – closed deals, won date, monthly revenue, business segment, lead type, business type.
-- Source: Olist (Brazilian e‑commerce platform).
+📊 Revenue Trends
+Revenue shows short-term growth in recent months
+However, overall sales volume is declining
 
----
+👉 Conclusion: Growth is driven by fewer but higher-value deals.
 
-## Tools & Technologies
+👥 Customer Segmentation
+Manufacturers
+Lower number of deals
+Significantly higher revenue contribution
+Resellers
+Higher deal volume
+Lower revenue per deal
 
-- **SQL** (PostgreSQL) – data cleaning, joining, aggregation  
-- **Python** – pandas, matplotlib, seaborn, plotly  
-- **Jupyter Notebook** – interactive analysis
+👉 Conclusion: Business is driven by high-value B2B customers rather than volume.
 
----
+🧩 Business Segments
 
-##  Data Processing Steps
+Top-performing segments:
 
-- Connected to PostgreSQL using SQLAlchemy.
-- Checked for missing values, duplicates, structural errors.
-- Created cleaned tables: `clean_mql_leads` and `clean_mql_deals`.
-- Standardized date formats; filled missing `origin` with `'unknown'`.
-- Merged datasets for funnel analysis.
+construction_tools_house_garden
+phone_mobile
+home_decor
+pet
+health_beauty
 
----
+Lower-performing segments:
 
-## Funnel & Marketing Analysis Performed
+watches
+food_drink
+perfume
+party
+bed_bath_table
+📊 Visualizations
 
-1. **Channel effectiveness** – revenue per channel, conversion rate, revenue heatmap over time.
-2. **Sales performance over time** – monthly revenue and sales count trends.
-3. **Customer segmentation** – orders and revenue by business type and business segment.
+The analysis includes:
 
----
+Revenue comparison across marketing channels
+Conversion rate analysis
+Monthly revenue trends
+Sales volume trends
+Funnel efficiency visualizations
+Customer segmentation breakdown
+💡 Business Impact
 
-##  Key Findings
+This analysis provides actionable insights for:
 
-###  Marketing Channels
-- **Organic Search** is the most effective channel:  
-  → **51,426 k revenue** | conversion rate **11.8%**  
-- **Paid Search** ranks second:  
-  → **9,169 k revenue** | conversion rate **12.3%**  
-- **Email** and **Social** show much lower conversion (~3–5.6%).
+Optimizing marketing budget allocation across channels
+Improving funnel conversion efficiency
+Identifying high-value customer segments
+Supporting revenue growth strategy
+Prioritizing high-performing business categories
+🚀 Key Takeaway
 
-###  Time Trends
-- Revenue **grew sharply in October 2018** (50,874 k), but **sales volume declined over the last 7 months** – a potential warning sign.
-- The sales cycle remains **long** – leads take considerable time to convert (process inefficiency).
+The business is primarily driven by:
 
-###  Customer Segments
-- **Resellers** generate the highest number of orders (587) but lower revenue per order.  
-- **Manufacturers** generate fewer orders (242) but **much higher total revenue** (50.8 M vs 10.3 M) – higher‑value customers.
-- Top revenue‑generating business segments:  
-  `construction_tools_house_garden`, `phone_mobile`, `home_decor`, `pet`, `health_beauty`.
+Organic Search (main acquisition channel)
+Manufacturers (highest revenue segment)
 
----
+However, performance limitations exist due to:
 
-##  Sample Visualizations
+Long sales cycles
+Declining deal volume
+Funnel inefficiencies
+📄 License
 
-- Bar charts – revenue per channel, conversion rates  
-- Line charts – monthly revenue and sales volume  
-- Heatmap – channel‑by‑month revenue  
-- Pie & bar charts – customer segment analysis  
+This project is intended for educational and portfolio purposes. Feel free to use with attribution.
 
-All visualizations created with `matplotlib`, `seaborn`, and `plotly`.
+👤 Author
 
-
----
-
-## 📄 License
-
-This project is for educational and portfolio purposes. Feel free to use and adapt with attribution.
-
----
-
-## 👤 Author
-
-Ashot Movsisyan 
-(https://github.com/ashot0231/) 
-
----
+Ashot Movsisyan
+GitHub: https://github.com/ashot0231/
