@@ -1,6 +1,3 @@
-Вот максимально чистый **business-style README**, без воды, без лишних пояснений, без “обучающего” тона:
-
----
 
 # E-commerce Marketing Performance & Revenue Analysis
 
@@ -126,7 +123,4 @@ Revenue is primarily driven by Organic Search and high-value manufacturer custom
 Ashot Movsisyan
 GitHub: [https://github.com/ashot0231/](https://github.com/ashot0231/)
 
----
-
-Если хочешь, я могу сделать ещё более “hard mode” версию — как у McKinsey / Uber analytics report (ещё более коротко и жёстко).
 
