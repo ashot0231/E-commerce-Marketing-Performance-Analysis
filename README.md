@@ -1,16 +1,16 @@
 ---
 
 
-# 📊 E‑commerce Funnel & Marketing Performance Analysis
+#  E‑commerce Marketing Performance Analysis
 
-## 📌 Project Overview
+##  Project Overview
 
 This project analyzes customer acquisition, marketing channel performance, and revenue generation for an e‑commerce platform (Olist seller funnel).  
 Using **SQL** for data cleaning and **Python** for analysis and visualization, the study identifies which channels deliver the highest‑value customers, how revenue and sales volume evolve over time, and which customer segments drive orders and revenue.
 
 ---
 
-## 🎯 Business Questions Answered
+##  Business Questions Answered
 
 - Which marketing channels bring the highest revenue and best conversion rates?
 - How does revenue and sales volume change month over month?
@@ -20,7 +20,7 @@ Using **SQL** for data cleaning and **Python** for analysis and visualization, t
 
 ---
 
-## 🧱 Dataset Description
+##  Dataset Description
 
 - **8,000 Marketing Qualified Leads (MQLs)** collected from June 2017 to June 2018.
 - Two main tables:
@@ -30,7 +30,7 @@ Using **SQL** for data cleaning and **Python** for analysis and visualization, t
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **SQL** (PostgreSQL) – data cleaning, joining, aggregation  
 - **Python** – pandas, matplotlib, seaborn, plotly  
@@ -38,7 +38,7 @@ Using **SQL** for data cleaning and **Python** for analysis and visualization, t
 
 ---
 
-## 🧹 Data Processing Steps
+##  Data Processing Steps
 
 - Connected to PostgreSQL using SQLAlchemy.
 - Checked for missing values, duplicates, structural errors.
@@ -48,7 +48,7 @@ Using **SQL** for data cleaning and **Python** for analysis and visualization, t
 
 ---
 
-## 📈 Funnel & Marketing Analysis Performed
+## Funnel & Marketing Analysis Performed
 
 1. **Channel effectiveness** – revenue per channel, conversion rate, revenue heatmap over time.
 2. **Sales performance over time** – monthly revenue and sales count trends.
@@ -56,20 +56,20 @@ Using **SQL** for data cleaning and **Python** for analysis and visualization, t
 
 ---
 
-## 🔍 Key Findings
+##  Key Findings
 
-### 📢 Marketing Channels
+###  Marketing Channels
 - **Organic Search** is the most effective channel:  
   → **51,426 k revenue** | conversion rate **11.8%**  
 - **Paid Search** ranks second:  
   → **9,169 k revenue** | conversion rate **12.3%**  
 - **Email** and **Social** show much lower conversion (~3–5.6%).
 
-### 📅 Time Trends
+###  Time Trends
 - Revenue **grew sharply in October 2018** (50,874 k), but **sales volume declined over the last 7 months** – a potential warning sign.
 - The sales cycle remains **long** – leads take considerable time to convert (process inefficiency).
 
-### 🏭 Customer Segments
+###  Customer Segments
 - **Resellers** generate the highest number of orders (587) but lower revenue per order.  
 - **Manufacturers** generate fewer orders (242) but **much higher total revenue** (50.8 M vs 10.3 M) – higher‑value customers.
 - Top revenue‑generating business segments:  
@@ -77,7 +77,7 @@ Using **SQL** for data cleaning and **Python** for analysis and visualization, t
 
 ---
 
-## 📊 Sample Visualizations
+##  Sample Visualizations
 
 - Bar charts – revenue per channel, conversion rates  
 - Line charts – monthly revenue and sales volume  
@@ -86,39 +86,6 @@ Using **SQL** for data cleaning and **Python** for analysis and visualization, t
 
 All visualizations created with `matplotlib`, `seaborn`, and `plotly`.
 
----
-
-## 🚀 How to Run
-
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/yourusername/ecommerce-funnel-analysis.git
-   cd ecommerce-funnel-analysis
-   ```
-
-2. **Install dependencies**  
-   ```bash
-   pip install pandas sqlalchemy matplotlib seaborn plotly jupyter
-   ```
-
-3. **Set up PostgreSQL database**  
-   - Load the provided data into your local PostgreSQL instance.  
-   - Update the connection string in the notebook:  
-     ```python
-     engine = create_engine("postgresql://username:password@localhost:5432/analytics")
-     ```
-
-4. **Run the notebook**  
-   ```bash
-   jupyter notebook "E-commerce Marketing Performance Analysis.ipynb"
-   ```
-
----
-
-## 📁 Repository Contents
-
-- `E-commerce Marketing Performance Analysis.ipynb` – complete analysis notebook  
-- `README.md` – project description (this file)  
 
 ---
 
